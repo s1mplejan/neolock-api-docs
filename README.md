@@ -476,3 +476,12 @@ The response for this request is in JSON format and has the following schema:
         "code": 200,
         "message": "Subscription deleted"
     }
+## user license information
+*Method: **GET** userLicInfo*
+ 
+
+## Example request
+
+    curl --location '{{BASE_URL}}/licenses/clients' \
+    --header 'x-knox-apitoken: token' \
+    --header 'Content-Type: application/json'
