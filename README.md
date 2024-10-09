@@ -209,13 +209,6 @@ Upon successful execution, the endpoint returns a status code of 200 and a JSON 
     
 -   `requestedId` (string): The identifier of the unlock request.
 
-## Example
-
-    {
-	    "deviceUid": "",
-	    "message": "your unlocked message",
-	    "tel":"your phone number"
-    }
 
 ## Add Offline Device Lock Pin
 *Method: **POST** getPinWithPasskey*.
