@@ -91,7 +91,7 @@ The request must include the following field:
 -   **deviceUid** (string, required): The unique identifier for the device that you wish to approve.
 ## Example Request
 
-    curl --location 'https://api.neolock.uz/api/clients/devices/approve' \
+    curl --location '{{BASE_URL}}/clients/devices/approve' \
     --header 'Content-Type: application/json' \
     --header 'x-knox-apitoken: token' \
     --data '{
