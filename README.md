@@ -45,37 +45,34 @@ If the credentials provided are incorrect, the API will return a response with a
  This endpoint allows the client to upload a list of devices. Use POST method.
  
 #### Request Body
- -   `deviceList` (array of objects, required): An array of device objects containing device UIDs.
 -   `deviceUid` (string, required): The unique identifier of the device.
 -   `autoAccept` (boolean, required): A boolean value indicating whether the devices should be automatically accepted.
 
 ## Example Request
 
-    curl --location '{{BASE_URL}}/clients/devices/uploads' \
+ 
+
+     curl --location '{{BASE_URL}}/clients/devices/uploads' \
     --header 'Content-Type: application/json' \
     --header 'x-knox-apitoken: token' \
     --data '{
-      "deviceList": [
-        {
-          "deviceUid": "imei device"
-        }
-      ],
+      "deviceUid": "imei number",
       "autoAccept": true
     }'
+
 ## Response
 The response will be in the form of a JSON schema:
 
     {
         "result": "SUCCESS",
-        "uploadId": "",
-        "uploadStatus": "Progress",
-        "totalDeviceCount": 1,
-        "validDeviceCount": 0,
-        "invalidDeviceCount": 1,
-        "invalidReasons": [
+        "status": "FAILED",
+        "devices": [
             {
-                "deviceUid": "",
-                "reason": "device already exists"
+                "id": null,
+                "imei": "imei number",
+                "serial": null,
+                "model": null,
+                "status": "SAME_RESELLER_AND_SAME_CUSTOMER"
             }
         ]
     }
